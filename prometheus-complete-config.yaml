@@ -90,8 +90,8 @@ data:
       interval: 30s
       rules:
       # Add your custom recording rules here
-      - record: bobby_sex_appeal
-        expr: -time()
+      - record: conical_burr_relevance
+        expr: time()
 ---
 # ServiceAccount for Prometheus (needed to access Kubernetes API)
 apiVersion: v1
