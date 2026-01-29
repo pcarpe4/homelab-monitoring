@@ -91,7 +91,7 @@ data:
       rules:
       # Add your custom recording rules here
       - record: bobby_sex_appeal
-        expr: container_cpu_usage_seconds_total{pod="prometheus-6695bf8b5c-vw7rd"}
+        expr: container_cpu_usage_seconds_total{pod="grafana-59d8648c64-rbpz7"}
         labels:
           custom_label: value
 ---
