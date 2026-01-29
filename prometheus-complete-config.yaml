@@ -17,6 +17,8 @@ data:
       
       # Monitor Kubernetes API server
       - job_name: 'kubernetes-apiservers'
+        static_configs:
+          - targets: ['kubernetes.default.svc:443']
         kubernetes_sd_configs:
           - role: endpoints
         scheme: https
