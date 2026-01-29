@@ -8,6 +8,9 @@ data:
     global:
       scrape_interval: 15s
       evaluation_interval: 15s
+
+    rule_files:
+      - /etc/prometheus/rules/recording_rules.yml
     
     scrape_configs:
       # Monitor Prometheus itself
@@ -172,6 +175,8 @@ spec:
           mountPath: /etc/prometheus
         - name: storage
           mountPath: /prometheus
+        - name: rules
+          mountPath: /etc/prometheus/rules
         resources:
           requests:
             memory: "512Mi"
@@ -185,6 +190,9 @@ spec:
           name: prometheus-config
       - name: storage
         emptyDir: {}
+      - name: rules
+        configMap:
+          name: prometheus-rules
 ---
 apiVersion: v1
 kind: Service
