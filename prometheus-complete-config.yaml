@@ -75,6 +75,23 @@ data:
           - target_label: __metrics_path__
             replacement: /metrics/cadvisor
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-rules
+  namespace: monitoring
+data:
+  recording_rules.yml: |-
+    groups:
+    - name: custom_metrics
+      interval: 30s
+      rules:
+      # Add your custom recording rules here
+      - record: bobby_sex_appeal
+        expr: container_cpu_usage_seconds_total{pod="prometheus-6695bf8b5c-vw7rd"}
+        labels:
+          custom_label: value
+---
 # ServiceAccount for Prometheus (needed to access Kubernetes API)
 apiVersion: v1
 kind: ServiceAccount
