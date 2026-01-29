@@ -91,7 +91,7 @@ data:
       rules:
       # Add your custom recording rules here
       - record: bobby_sex_appeal
-        expr: expr: time()
+        expr: -time()
 ---
 # ServiceAccount for Prometheus (needed to access Kubernetes API)
 apiVersion: v1
