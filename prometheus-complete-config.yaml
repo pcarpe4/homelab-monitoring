@@ -90,7 +90,7 @@ data:
       interval: 30s
       rules:
       # Add your custom recording rules here
-      - record: conical_burr_relevance
+      - record: zacks_excitement_for_patrick
         expr: time()
 ---
 # ServiceAccount for Prometheus (needed to access Kubernetes API)
